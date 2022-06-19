@@ -1,6 +1,7 @@
-<?php require "template/header.php"; ?>
+
 <?php include "core/base.php"; ?>
 <?php include "core/functions.php"; ?>
+<?php require "template/header.php"; ?>
 
 <div class="container-fluid">
 <div class="col-12">
@@ -33,8 +34,7 @@
                                 <td><?php echo $user['full_name'] ?></td>
                                 <td><?php echo $user['username'] ?></td>
                                 <td class="text-nowrap">
-                                    <a href="" class="btn btn-info ">Update Admin</a>
-                                    <a href="" class="btn btn-danger ">Delete</a>
+                                    <a href="user-del.php? id=<?php echo $user['id'] ?>" class="btn btn-danger ">Delete</a>
                                 </td>
                             </tr>
                                 

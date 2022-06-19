@@ -24,6 +24,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Order</a>
         </li>
+        <li class="">
+          <a class="nav-link btn btn-info text-white" href="dashboard.php">Dashboard</a>
+        </li>
         
         
       
