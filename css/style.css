@@ -6,9 +6,13 @@
 
 /* CSS for All */
 
+
 @media screen and (min-width:900px){
     .manage-admin-content{
         padding-inline: 7rem !important;
+    }
+    .manage-food{
+        padding-inline:7rem !important;
     }
 }
 @media screen and (max-width:900px){
@@ -18,6 +22,7 @@
     .manage-admin-content a{
         width:auto ;
     }
+   
 }
 
 @media screen and (max-width:560px){
@@ -250,7 +255,7 @@ fieldset{
         margin-bottom: 3%;
     }
 
-    .btn{
+    .food-search .btn{
         width: 91%;
         padding: 2%;
     }

@@ -1,7 +1,7 @@
-<?php include "core/auth.php"; ?>
-<?php  require "template/header.php"; ?>
-
-<div class="dashboard">
+<div class="container-fluid">
+    <div class="col-12">
+        <div class="row">
+            <div class="dashboard">
                 <div class="col-12">
                     <div class="header shadow-sm">
                         <div class="p-3">
@@ -16,5 +16,6 @@
                     </div>
                 </div>
             </div>
-
-<?php  require "template/footer.php"; ?>
+        </div>
+    </div>
+</div>
