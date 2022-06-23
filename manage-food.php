@@ -33,13 +33,13 @@
                         foreach(foodList() as $f){ ?>
                             <tr>
                                 <td><?php echo $f['id'] ?></td>
-                                <td><?php echo short($f['title'],20) ?></td>
+                                <td><?php echo short($f['title'],15) ?></td>
                                 <td><?php echo short($f['description'],30); ?></td>
                                 <td><?php echo $f['price'] ?></td>
                                 <td class="img-size-50">
                                     <img src="<?php echo $url; ?>/images/food/<?php echo $f['image_name']; ?>" style="width:80px;" alt="No Photo">
                                 </td>
-                                <td><?php echo category($f['category_id'])['title'] ?></td>
+                                <td><?php echo category($f['category_id'])['title']; ?></td>
                                 <td>
                                     <a href="food-del.php?id=<?php echo $f['id']; ?>&image_name=<?php echo $f['image_name']; ?>" class="btn btn-danger btn-sm">Delete</a>
                                     <a class="btn btn-sm btn-info" href="food-update.php?id=<?php echo $f['id'] ?>">Update</a>

@@ -195,12 +195,18 @@ function foodListId($id){
 
 }
 
+function foodByCategory($category_id,$limit='9999',$food_id=0){
+    $sql = "SELECT * FROM tbl_food WHERE category_id= '$category_id' AND id!=$food_id ORDER BY id DESC LIMIT $limit ";
+    return fetchAll($sql);
+}
+
 function foodUpdate(){
     
     $id = $_GET['id'];
     $title = $_POST['title'];
     $description = $_POST['description'];
     $price = $_POST['price'];
+   
     $category_id = $_POST['category_id'];
     if(isset($_FILES['image']['name'])){
         $image_name = $_FILES['image']['name'];
@@ -213,8 +219,42 @@ function foodUpdate(){
     $sql = "UPDATE tbl_food SET title='$title',image_name='$image_name',description='$description',price='$price',category_id='$category_id' WHERE id = $id";
     if(runQuery($sql)){ 
     return successAlert("Food post is successfully updated.");
-    }
-
-    
+    } 
 }
 
+function search($search){
+    $sql ="SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%' ORDER BY id DESC";
+    return fetchAll($sql);
+}
+
+
+//order//
+
+function runOrder()
+{
+   
+    $food = $_POST['food-title'];
+    $price = $_POST['food-price'];
+    $qty = $_POST['qty'];
+    $total = $price * $qty;
+    $full_name = $_POST['full_name'];
+    $email = $_POST['email'];
+    $contact = $_POST['contact'];
+    $address= $_POST['address'];
+    
+    $sql = "INSERT INTO tbl_order (food,price,qty,total,customer_name,customer_contact,customer_email,custom_address) 
+    VALUES ('$food','$price','$qty','$total','$full_name','$contact','$email','$address')";
+    
+    if(runQuery($sql)){
+        return successAlert("Your order is success,the deliver will arrive soon.Thank you so much.");
+    }else{
+        return wrongAlert("something is wrong");
+    }
+
+}
+
+function showOrder(){
+    $sql = "SELECT * FROM tbl_order";
+    return fetchAll($sql);
+
+}
